@@ -5,8 +5,8 @@ import logo from "@/assets/logo.png"
 const Footer = () => {
     return (
         <div className='bg-[#F9FAFB] p-2 xl:p-0'>
-            <div className='mx-auto xl:w-[80%]'>
-                <div className='py-20 flex flex-col xl:flex-row justify-between gap-2 xl:gap-5 border-b-gray-400'>
+            <div className='mx-auto w-[85%] xl:w-[80%]'>
+                <div className='py-20 flex flex-col lg:flex-row justify-between gap-10 xl:gap-5 border-b-gray-400'>
                     <div className='space-y-2 xl:space-y-5'>
                         <img src={logo.src} className='object-contain h-[120px]' alt="" />
                     </div>

@@ -5,11 +5,11 @@ import { teamData } from '@/data'
 
 const TeamComponent = () => {
     return (
-        <div className='py-20 w-[80%] mx-auto flex flex-col justify-center min-h-[95vh] items-center'>
+        <div className='py-20 w-[85%] md:w-[80%] mx-auto flex flex-col justify-center min-h-[95vh] items-center'>
             <div className='text-center'>
                 <h1 className={`${style.minHeader.fontSize} ${style.minHeader.lineHeight} ${style.minHeader.fontWeight}`}>Our Leadership Team</h1>
             </div>
-            <div className='flex justify-between w-full py-10'>
+            <div className='flex flex-col items-center lg:flex-row lg:items-stretch gap-10 justify-center w-full py-10'>
                 {
                     teamData.map((member, index) => (
                         <TeamBox key={index} data={member} />

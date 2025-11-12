@@ -5,13 +5,13 @@ import { style } from '@/styles'
 
 const HireSmarter = () => {
     return (
-        <div className='flex items-center min-h-[65vh]'>
-            <div className='w-[80%] mx-auto flex justify-between rounded-xl py-10' style={{ backgroundColor: style.lightBG.backgroundColor }}>
-                <div className='w-[50%] flex justify-center items-center'>
-                    <img src={hire.src} className='h-[400px] object-contain' alt="" />
+        <div className='flex items-center min-h-[55vh]'>
+            <div className='w-[85%] md:w-[80%] mx-auto flex flex-col md:flex-row justify-between rounded-xl py-10 px-5 md:px-10' style={{ backgroundColor: style.lightBG.backgroundColor }}>
+                <div className='md:w-[50%] flex justify-center items-center'>
+                    <img src={hire.src} className='h-[300px] w-[350px] object-contain' alt="" />
                 </div>
-                <div className='w-[50%] space-y-5 flex flex-col justify-center'>
-                    <h1 className={`${style.minHeader.fontSize} leading-15 ${style.minHeader.fontWeight}`}>Hire Smarter. Scale Faster. Simplify Staffing.</h1>
+                <div className='md:w-[50%] space-y-5 flex flex-col justify-center text-center md:text-left'>
+                    <h1 className={`${style.minHeader.fontSize} leading-10 md:leading-15 ${style.minHeader.fontWeight}`}>Hire Smarter. Scale Faster. Simplify Staffing.</h1>
                     <p className={`${style.para.fontSize} font-medium text-muted-foreground`}>Experience a new era of on-demand hiring with verified talent, compliance, and quality — all in one platform.</p>
                     <Button>Get Started</Button>
                 </div>

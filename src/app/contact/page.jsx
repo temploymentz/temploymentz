@@ -27,7 +27,7 @@ const page = () => {
         <>
             <div className="min-h-[80vh] w-[80%] mx-auto py-20">
                 <div className="mx-auto">
-                    <div className="flex justify-between">
+                    <div className="flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between">
                         {/* Left Column - Contact Information */}
                         <div className="space-y-12">
                             <div>
@@ -75,7 +75,7 @@ const page = () => {
                         </div>
 
                         {/* Right Column - Contact Form */}
-                        <div className="w-1/2 bg-white rounded-lg p-8">
+                        <div className="lg:w-1/2 bg-white rounded-lg p-8">
                             <div className="space-y-6">
                                 {/* Full Name Field */}
                                 <div>
