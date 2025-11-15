@@ -1,16 +1,25 @@
+"use client";
 import React from 'react'
 import about from "@/assets/about.png"
 import { style } from '@/styles'
 import Button from '@/app/components/Button'
+import { useRouter } from 'next/navigation';
 
-const Blog = () => {
+const Blog = ({ data, index }) => {
+    const router = useRouter();
+
+    const handleReadMore = () => {
+        router.push(`/blogs/${index + 1}`);
+    };
     return (
         <div style={{ backgroundColor: style.lightBG.backgroundColor }} className='p-5 border rounded-xl'>
-            <img src={about.src} className='h-[250px] object-cover' alt="" />
-            <div className='mt-4 space-y-4'>
-                <h1 className={`font-medium ${style.para.fontSize} ${style.para.lineHeight}`}>Flexibility & Scalability</h1>
-                <p className={`text-sm md:text-md`}>When workloads fluctuate, or you have a short-term project, a temporary workforce allows you to *scale up or down quickly*. You avoid committing to long-term payroll overheads when the need is transient. Meador Staffing Services+1</p>
-                <Button className='text-xs md:text-base'>Read More -{">"}</Button>
+            <img src={data.image.src} className='h-[400px] object-cover mx-auto rounded-xl' alt="" />
+            <div className='mt-4 space-y-4 flex flex-col justify-between items-start'>
+                <div className='py-4 space-y-2'>
+                    <h1 className={`font-medium line-clamp-1 ${style.para.fontSize} ${style.para.lineHeight}`}>{data.heading}</h1>
+                    <p className={`text-sm line-clamp-3 md:text-md`}>{data.intro}</p>
+                </div>
+                <Button onClick={handleReadMore} className='text-xs md:text-sm'>Read More -{">"}</Button>
             </div>
         </div>
     )
