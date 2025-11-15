@@ -13,7 +13,7 @@ const Blog = ({ data, index }) => {
     };
     return (
         <div style={{ backgroundColor: style.lightBG.backgroundColor }} className='p-5 border rounded-xl'>
-            <img src={data.image.src} className='h-[400px] object-cover mx-auto rounded-xl' alt="" />
+            <img src={data.image.src} className='h-[300px] md:h-[300px] object-cover mx-auto rounded-xl' alt="" />
             <div className='mt-4 space-y-4 flex flex-col justify-between items-start'>
                 <div className='py-4 space-y-2'>
                     <h1 className={`font-medium line-clamp-1 ${style.para.fontSize} ${style.para.lineHeight}`}>{data.heading}</h1>
