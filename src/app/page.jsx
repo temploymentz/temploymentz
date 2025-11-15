@@ -16,7 +16,7 @@ export default function Page() {
     <>
       {/* Elevate Your Page */}
       <div className='border-t-2' style={{ backgroundColor: style.lightBG.backgroundColor }}>
-        <div className='w-[85%] xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between min-h-[80vh] items-center'>
+        <div className='py-10 md:py-0 w-[85%] xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between min-h-[80vh] items-center'>
           <div className='md:w-[50%] space-y-5'>
             <h1 className={`${style.header.fontSize} ${style.header.lineHeight} ${style.header.fontWeight}`}> <span className='text-blue-600'>Elevate your business with trusted</span> <span className='text-yellow-500'>White- <br /> Collar gig professionals</span></h1>
             <p className={`${style.para.fontSize} ${style.para.lineHeight}`}>Temploymentz is India’s leading gig staffing platform, connecting businesses quickly with skilled temporary workers. Find the right talent for single shifts or ongoing contracts with ease. Enjoy fast hiring, compliance, and quality service through our easy-to-use portal. Grow your business or career with Temploymentz</p>
