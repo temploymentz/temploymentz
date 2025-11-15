@@ -130,7 +130,7 @@ export const accordianData = [
     title: "Retail and E-commerce",
     desc: "Connect with skilled retail and e-commerce professionals to manage stores, online operations, and customer experiences efficiently.",
     roles: [
-      "List",
+      "E-commerce Customer Support Specialist",
       "Cashier",
       "Greeters/promoters",
       "Online Store Product Lister",
