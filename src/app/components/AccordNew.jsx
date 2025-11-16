@@ -1,5 +1,6 @@
 "use client";
 import { Plus, X } from "lucide-react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const AccordNew = ({ data, index }) => {
@@ -20,16 +21,14 @@ const AccordNew = ({ data, index }) => {
           className="cursor-pointer transition-transform duration-300 ease-in-out"
         >
           <div
-            className={`transform transition-all duration-300 ${
-              showData ? "rotate-180 opacity-0" : "rotate-0 opacity-100"
-            } absolute`}
+            className={`transform transition-all duration-300 ${showData ? "rotate-180 opacity-0" : "rotate-0 opacity-100"
+              } absolute`}
           >
             <Plus className="text-blue-600 font-bold md:h-10 md:w-10" />
           </div>
           <div
-            className={`transform transition-all duration-300 ${
-              showData ? "rotate-0 opacity-100" : "-rotate-180 opacity-0"
-            }`}
+            className={`transform transition-all duration-300 ${showData ? "rotate-0 opacity-100" : "-rotate-180 opacity-0"
+              }`}
           >
             <X className="text-blue-600 font-bold md:h-10 md:w-10" />
           </div>
@@ -47,9 +46,11 @@ const AccordNew = ({ data, index }) => {
               <div className="md:flex-1 text-left">
                 <h3 className="text-lg text-center md:text-left md:text-2xl font-semibold mb-2">{role}</h3>
               </div>
-              <button className="text-sm md:text-base px-4 py-2 border border-blue-600 rounded-lg font-medium hover:bg-blue-50 transition">
-                Get Quote
-              </button>
+              <Link href={'#login-href'}>
+                <button className="text-sm md:text-base px-4 py-2 border border-blue-600 rounded-lg font-medium hover:bg-blue-50 transition">
+                  Get Quote
+                </button>
+              </Link>
             </div>
           ))}
         </div>

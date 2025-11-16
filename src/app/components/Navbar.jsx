@@ -28,7 +28,9 @@ const Navbar = () => {
                             {link.name}
                         </Link>
                     ))}
-                    <Button>Login</Button>
+                    <Link href={'#login-href'}>
+                        <Button>Login</Button>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu */}
@@ -48,7 +50,9 @@ const Navbar = () => {
                                         {link.name}
                                     </Link>
                                 ))}
-                                <Button className="mt-4">Login</Button>
+                                <Link href={'#login-href'}>
+                                    <Button className="mt-4">Login</Button>
+                                </Link>
                             </div>
                         </SheetContent>
                     </Sheet>

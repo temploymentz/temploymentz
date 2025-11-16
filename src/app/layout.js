@@ -2,6 +2,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Whatsapp from "./components/Whatsapp";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
         className={`${plusJakarta.variable} antialiased`}
       >
         <Navbar />
+        <Whatsapp />
         {children}
         <Footer />
       </body>

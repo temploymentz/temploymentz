@@ -124,3 +124,16 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.float-animation {
+  animation: floatUpDown 2s ease-in-out infinite;
+}

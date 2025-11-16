@@ -15,7 +15,7 @@ const page = () => {
                     <h1 className={`md:w-2/7 ${style.minHeader.fontSize} ${style.minHeader.lineHeight} ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>About</span> <span className='text-yellow-500'>Us</span> </h1>
                     <p className={`md:w-5/7 font-medium ${style.para.fontSize} ${style.para.lineHeight}`}>Founded in Bangalore, Temploymentz set out to revolutionize temporary staffing across India. Our mission is to create flexible work opportunities for skilled professionals and reliable staffing solutions for organizations. With thousands of success stories, we’re dedicated to compliance, quality, and convenience. Partner with us to transform your workforce and unlock growth, balance, and innovation</p>
                 </div>
-                <img src={about.src} className='h-[250px] md:h-[350px] object-cover' alt="" />
+                <img src={about.src} className='h-[250px] md:h-[350px] xl:w-full xl:h-fit object-cover' alt="" />
             </div>
 
 
