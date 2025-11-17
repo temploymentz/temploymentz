@@ -18,9 +18,9 @@ export default function Page() {
       {/* Elevate Your Page */}
       <div className='border-t-2' style={{ backgroundColor: style.lightBG.backgroundColor }}>
         <div className='py-10 md:py-0 w-[85%] xl:w-[98%] mx-auto flex flex-col md:flex-row justify-between min-h-[80vh] items-center'>
-          <div className='md:w-[75%] flex flex-col items-start xl:px-30 2xl:px-50 space-y-5 py-10 xl:py-0'>
+          <div className='md:w-[75%] flex flex-col items-start xl:px-20 2xl:px-50 space-y-5 py-10 xl:py-0'>
             <h1 className={` ${style.header.lineHeight} ${style.header.fontWeight} text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl`}> <span className='text-blue-600'>Elevate your business with trusted</span> <span className='text-yellow-500'> <br />White-Collar gig professionals</span></h1>
-            <p className={`${style.para.lineHeight} text-[#493f4a] py-2`}>Temploymentz is India’s leading gig staffing platform, connecting businesses quickly with skilled temporary workers. Find the right talent for single shifts or ongoing contracts with ease. Enjoy fast hiring, compliance, and quality service through our easy-to-use portal. Grow your business or career with Temploymentz</p>
+            <p className={`xl:text-xl ${style.para.lineHeight} text-[#493f4a] py-2`}>Temploymentz is India’s leading gig staffing platform, connecting businesses quickly with skilled temporary workers. Find the right talent for single shifts or ongoing contracts with ease. Enjoy fast hiring, compliance, and quality service through our easy-to-use portal. Grow your business or career with Temploymentz</p>
             <Link href={'#login-href'}>
               <Button className='text-5xl px-5 py-3'>Get Started</Button>
             </Link>
