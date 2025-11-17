@@ -23,7 +23,7 @@ const Footer = () => {
             <div className='mx-auto w-[85%] xl:w-[90%]'>
                 <div className='py-20 flex flex-col lg:flex-row justify-between gap-10 xl:gap-5 border-b-gray-400'>
                     <div className='space-y-2 xl:space-y-5'>
-                        <img src={logoBG.src} className='object-contain h-[170px]' alt="" />
+                        <img src={logoBG.src} className='object-contain h-[120px]' alt="" />
                     </div>
                     <div className='lg:w-3/4 flex flex-col gap-10 lg:flex-row justify-between'>
                         <div className='mt-5 xl:mt-0 '>

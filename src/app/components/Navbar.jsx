@@ -14,14 +14,14 @@ const Navbar = () => {
             <div className="py-5 flex justify-between items-center w-[90%] lg:w-[77%] mx-auto">
                 {/* Logo */}
                 <div>
-                    <img src={logoBG.src} className="h-[70px] lg:h-[120px]" alt="Logo" />
+                    <img src={logoBG.src} className="h-[70px] lg:h-[90px]" alt="Logo" />
                 </div>
 
                 {/* Desktop Nav Links */}
                 <div className="hidden lg:flex gap-10 items-center">
                     {navlinks.map((link) => (
                         <Link
-                            className="px-2 text-xl text-blue-600 font-bold hover:text-blue-600 transition-colors"
+                            className="px-2 text-base text-blue-600 font-bold hover:text-blue-600 transition-colors"
                             key={link.name}
                             href={link.href}
                         >
@@ -39,7 +39,7 @@ const Navbar = () => {
                         <SheetTrigger>
                             <Menu className="h-7 w-7 cursor-pointer" />
                         </SheetTrigger>
-                        <SheetContent side="left" className="p-6">
+                        <SheetContent side="left" className="p-6 bg-[#fcf103]">
                             <div className="flex flex-col gap-6 mt-10">
                                 {navlinks.map((link) => (
                                     <Link
