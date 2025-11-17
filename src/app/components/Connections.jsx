@@ -16,14 +16,14 @@ const Connections = ({ data, index }) => {
                 </div>
                 {
                     index === 0 ?
-                        <Button onClick={() => signIn("google")} className='text-blue-600 font-bold text-xl px-10'>Log In With Google
+                        <Button onClick={() => signIn("google")} className='text-blue-600 font-bold xl:text-xl xl:px-10'>Log In With Google
                             <img src={google.src} className='ml-2 object-contain w-7 h-7 bg-white rounded-full' alt="" />
                         </Button>
                         :
                         index === 1 ?
-                            <Button className='text-blue-600 font-bold text-xl px-10'>Log In</Button>
+                            <Button className='text-blue-600 font-bold xl:text-xl xl:px-10'>Log In</Button>
                             :
-                            <Button className='text-xl px-10'>Explore</Button>
+                            <Button className='xl:text-xl xl:px-10'>Explore</Button>
                 }
             </div>
         </div>

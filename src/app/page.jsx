@@ -58,8 +58,8 @@ export default function Page() {
       {/* Accodians */}
       <div className=' py-30 mx-auto flex justify-center min-h-[80vh] items-center'>
         <div className='space-y-10 text-center w-[85%] md:w-[80%]'>
-          <h1 className={`${style.minHeader.fontSize} leading-10 md:leading-15 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Connecting India’s Leading Industries with</span> <br /> <span className='text-yellow-500'>Skilled Gig Professionals</span></h1>
-          <p className={`text-center font-medium md:text-2xl text-gray-600 pb-5`}>
+          <h1 className={`${style.minHeader.fontSize} leading-10 md:leading-12 xl:leading-15 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Connecting India’s Leading Industries with</span> <br /> <span className='text-yellow-500'>Skilled Gig Professionals</span></h1>
+          <p className={`text-center font-medium md:text-xl xl:text-2xl text-gray-600 pb-5`}>
             Explore diverse sectors powered by trusted gig talent. From retail to healthcare, technology to design — Temploymentz bridges the gap between businesses and professionals, delivering flexibility,speed, and expertise to every industry.
           </p>
           <div className='space-y-10'>
@@ -77,7 +77,7 @@ export default function Page() {
           <div className='space-y-10 text-center'>
             <div className='flex flex-col gap-7 justify-between'>
               <h1 className={`${style.minHeader.fontSize} leading-10 lg:leading-15 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Why Choose </span> <span className='text-yellow-500'>Temploymentz?</span></h1>
-              <p className={`xl:text-2xl font-medium ${style.para.lineHeight} text-[#493f4a] pb-2`}>
+              <p className={`text-center font-medium md:text-xl xl:text-2xl text-gray-600 pb-5`}>
                 Discover a smarter way to hire and work. Temploymentz simplifies staffing with fast hiring, verified professionals, and complete compliance—helping businesses grow confidently and professionals thrive with flexibility.
               </p>
             </div>

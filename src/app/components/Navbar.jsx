@@ -21,7 +21,7 @@ const Navbar = () => {
                 <div className="hidden lg:flex gap-10 items-center">
                     {navlinks.map((link) => (
                         <Link
-                            className="px-2 text-base text-blue-600 font-bold hover:text-blue-600 transition-colors"
+                            className="px-2 text-base 2xl:text-xl text-blue-600 font-bold hover:text-blue-600 transition-colors"
                             key={link.name}
                             href={link.href}
                         >
@@ -29,7 +29,7 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Link href={'#login-href'}>
-                        <Button className="text-lg px-10 py-1">Login</Button>
+                        <Button className="text-sm 2xl:text-base px-5 py-1 2xl:px-10 2xl:py-2">Login</Button>
                     </Link>
                 </div>
 
