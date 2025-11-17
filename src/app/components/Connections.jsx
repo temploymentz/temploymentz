@@ -1,8 +1,9 @@
 "use client"
 import React from 'react'
-import Button from './Button'
 import { style } from '@/styles'
 import { signIn } from "next-auth/react";
+import Button from './Button';
+import google from "@/assets/google.png"
 
 const Connections = ({ data, index }) => {
     return (
@@ -14,7 +15,15 @@ const Connections = ({ data, index }) => {
                     <p className='xl:text-xl'>{data.description}</p>
                 </div>
                 {
-                    index === 0 ? <button onClick={() => signIn("google")} className='text-blue-600 font-bold'>SignIn/Login {"->"}</button> : <button className='text-blue-600 font-bold'>Explore {"->"}</button>
+                    index === 0 ?
+                        <Button onClick={() => signIn("google")} className='text-blue-600 font-bold text-xl px-10'>Log In With Google
+                            <img src={google.src} className='ml-2 object-contain w-7 h-7 bg-white rounded-full' alt="" />
+                        </Button>
+                        :
+                        index === 1 ?
+                            <Button className='text-blue-600 font-bold text-xl px-10'>Log In</Button>
+                            :
+                            <Button className='text-xl px-10'>Explore</Button>
                 }
             </div>
         </div>

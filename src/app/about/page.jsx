@@ -13,9 +13,12 @@ const page = () => {
             <div className='w-[85%] md:w-[80%] mx-auto flex flex-col justify-center items-center py-10 md:py-20 gap-10'>
                 <div className='flex flex-col md:flex-row gap-5 md:gap-0 text-center md:text-left justify-between'>
                     <h1 className={`md:w-2/7 ${style.minHeader.fontSize} ${style.minHeader.lineHeight} ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>About</span> <span className='text-yellow-500'>Us</span> </h1>
-                    <p className={`md:w-5/7 font-medium ${style.para.fontSize} ${style.para.lineHeight}`}>Founded in Bangalore, Temploymentz set out to revolutionize temporary staffing across India. Our mission is to create flexible work opportunities for skilled professionals and reliable staffing solutions for organizations. With thousands of success stories, we’re dedicated to compliance, quality, and convenience. Partner with us to transform your workforce and unlock growth, balance, and innovation</p>
+                    <div className='md:w-5/7 space-y-10'>
+                        <h1 className={`${style.minHeader.fontSize} leading-9 md:leading-14 ${style.minHeader.fontWeight}`}>Empowering <span className='text-blue-600'>Businesses</span> & <span className='text-yellow-500'>Professionals</span> in the <br /> New Age of Work </h1>
+                        <p className={` font-medium xl:text-xl text-[#493f4a] ${style.para.lineHeight}`}>Founded in Bangalore, Temploymentz set out to revolutionize temporary staffing across India. Our mission is to create flexible work opportunities for skilled professionals and reliable staffing solutions for organizations. With thousands of success stories, we’re dedicated to compliance, quality, and convenience. Partner with us to transform your workforce and unlock growth, balance, and innovation</p>
+                    </div>
                 </div>
-                <img src={about.src} className='h-[250px] md:h-[350px] xl:w-full xl:h-fit object-cover' alt="" />
+                <img src={about.src} className='h-[250px] -mt-10 md:h-[350px] xl:w-full xl:h-fit object-cover' alt="" />
             </div>
 
 
@@ -25,7 +28,7 @@ const page = () => {
                         <h1 className={`${style.minHeader.fontSize} ${style.minHeader.lineHeight} font-medium`}>Driven by <span className='text-blue-600'>Purpose</span>, Guided by <span className='text-yellow-500'>Innovation</span></h1>
                     </div>
                     <div className='grid md:grid-cols-2 gap-y-10 gap-x-20 py-5 md:py-10'>
-                        {   
+                        {
                             aboutData.map((item, index) => (
                                 <AboutBox key={index} data={item} />
                             ))

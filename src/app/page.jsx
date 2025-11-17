@@ -20,9 +20,9 @@ export default function Page() {
         <div className='py-10 md:py-0 w-[85%] xl:w-[80%] mx-auto flex flex-col md:flex-row justify-between min-h-[80vh] items-center'>
           <div className='md:w-[50%] space-y-5'>
             <h1 className={`${style.header.fontSize} ${style.header.lineHeight} ${style.header.fontWeight}`}> <span className='text-blue-600'>Elevate your business with trusted</span> <span className='text-yellow-500'> <br />White- Collar gig professionals</span></h1>
-            <p className={`${style.para.fontSize} ${style.para.lineHeight}`}>Temploymentz is India’s leading gig staffing platform, connecting businesses quickly with skilled temporary workers. Find the right talent for single shifts or ongoing contracts with ease. Enjoy fast hiring, compliance, and quality service through our easy-to-use portal. Grow your business or career with Temploymentz</p>
+            <p className={`xl:text-2xl ${style.para.lineHeight} text-[#493f4a] py-2`}>Temploymentz is India’s leading gig staffing platform, connecting businesses quickly with skilled temporary workers. Find the right talent for single shifts or ongoing contracts with ease. Enjoy fast hiring, compliance, and quality service through our easy-to-use portal. Grow your business or career with Temploymentz</p>
             <Link href={'#login-href'}>
-              <Button>Get Started</Button>
+              <Button className='text-5xl px-5 py-3'>Get Started</Button>
             </Link>
 
           </div>
@@ -35,8 +35,8 @@ export default function Page() {
       {/* Empowering */}
       <div id='login-href' className='w-[85%] md:w-[80%] mx-auto flex flex-col justify-center min-h-[95vh] items-center pt-20'>
         <div className='space-y-5 text-center'>
-          <h1 className={`${style.minHeader.fontSize} leading-9 md:leading-14 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Empowering Growth Through Flexible Work</span> <br /> <span className='text-yellow-500'>Connections</span></h1>
-          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 py-10 xl:py-20'>
+          <h1 className={`${style.minHeader.fontSize} leading-9 md:leading-14 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Empowering Growth Through </span> <span className='text-yellow-500'>Flexible Work Connections</span></h1>
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 py-10'>
             {
               connections.map((ele, idx) => <Connections index={idx} key={ele.title} data={ele} />)
             }
@@ -60,8 +60,8 @@ export default function Page() {
       <div className=' py-30 mx-auto flex justify-center min-h-[80vh] items-center'>
         <div className='space-y-10 text-center w-[85%] md:w-[80%]'>
           <h1 className={`${style.minHeader.fontSize} leading-10 md:leading-15 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Connecting India’s Leading Industries with</span> <br /> <span className='text-yellow-500'>Skilled Gig Professionals</span></h1>
-          <p className={`text-center font-medium md:text-xl`}>
-            Explore diverse sectors powered by trusted gig talent. <br /> From retail to healthcare, technology to design — Temploymentz bridges the gap between businesses and professionals, delivering flexibility, <br /> speed, and expertise to every industry.
+          <p className={`text-center font-medium md:text-2xl text-gray-600 pb-5`}>
+            Explore diverse sectors powered by trusted gig talent. From retail to healthcare, technology to design — Temploymentz bridges the gap between businesses and professionals, delivering flexibility,speed, and expertise to every industry.
           </p>
           <div className='space-y-10'>
             {
@@ -77,8 +77,8 @@ export default function Page() {
         <div className='w-[85%] md:w-[80%] mx-auto flex flex-col justify-center min-h-screen items-center py-15 '>
           <div className='space-y-10 text-center'>
             <div className='flex flex-col gap-7 justify-between'>
-              <h1 className={`${style.minHeader.fontSize} leading-10 lg:leading-15 ${style.minHeader.fontWeight}`}>Why  Choose <span className='text-blue-600'>Temploymentz?</span></h1>
-              <p className={`${style.para.fontSize} font-medium ${style.para.lineHeight}`}>
+              <h1 className={`${style.minHeader.fontSize} leading-10 lg:leading-15 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Why Choose </span> <span className='text-yellow-500'>Temploymentz?</span></h1>
+              <p className={`xl:text-2xl font-medium ${style.para.lineHeight} text-[#493f4a] pb-2`}>
                 Discover a smarter way to hire and work. Temploymentz simplifies staffing with fast hiring, verified professionals, and complete compliance—helping businesses grow confidently and professionals thrive with flexibility.
               </p>
             </div>
@@ -105,9 +105,9 @@ export default function Page() {
       {/* Testimonials */}
       <div className='w-[85%] md:w-[80%] mx-auto flex flex-col justify-center min-h-[80vh] py-15'>
         <div className='space-y-10'>
-          <h1 className={`${style.minHeader.fontSize} text-center md:text-left leading-10 md:leading-14 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Experiences Shared by</span>  <br /> <span className='text-yellow-500'>Our Clients</span></h1>
+          <h1 className={`${style.minHeader.fontSize} text-center md:text-left leading-10 md:leading-14 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Experiences Shared by</span> <span className='text-yellow-500'>Our Clients</span></h1>
         </div>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-10 xl:grid-cols-3 justify-between w-full py-20'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-10 xl:grid-cols-3 justify-between w-full py-10'>
           {
             testimonialsData.map(ele => <Testimonials key={ele.name} data={ele} />)
           }
