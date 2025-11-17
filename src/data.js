@@ -130,7 +130,7 @@ export const teamData = [
 export const accordianData = [
   {
     title: "Special Categories",
-    desc: "Connect with skilled retail and e-commerce professionals to manage stores, online operations, and customer experiences efficiently.",
+    desc: "On-Demand Experts for Work That Needs Precision.",
     roles: [
       "Business Networking Representative",
       "Home Tutor",
