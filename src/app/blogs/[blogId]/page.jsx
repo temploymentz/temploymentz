@@ -25,7 +25,7 @@ const BlogPage = () => {
                 </div>
 
                 {/* TITLE */}
-                <h1 className="text-2xl md:text-4xl font-bold leading-tight text-center">
+                <h1 className="text-blue-600 text-2xl md:text-4xl font-bold leading-tight text-center">
                     {blog.heading}
                 </h1>
 

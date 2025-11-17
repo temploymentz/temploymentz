@@ -63,12 +63,12 @@ const page = () => {
                                 <div className="space-y-4 font-semibold">
                                     <div className="flex items-center gap-3">
                                         <Phone className="text-blue-600" size={24} />
-                                        <span className="text-xl text-gray-800">+91 74062 07776</span>
+                                        <span className="text-xl text-gray-800">+91 74062 07776 | +91 96208 85201</span>
                                     </div>
 
                                     <div className="flex items-center gap-3">
                                         <Mail className="text-blue-600" size={24} />
-                                        <span className="text-xl text-gray-800">Sathish@temploymentz.com</span>
+                                        <span className="text-xl text-gray-800">info@temploymentz.com</span>
                                     </div>
                                 </div>
                             </div>
@@ -138,10 +138,10 @@ const page = () => {
                     </div>
                 </div>
             </div>
-
+{/* 
             <TeamComponent />
 
-            <HireSmarter />
+            <HireSmarter /> */}
         </>
     )
 }
