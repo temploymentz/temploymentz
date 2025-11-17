@@ -6,22 +6,22 @@ import React from "react";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Button from "./Button";
-import logo from "@/assets/logo.png";
+import logoBG from "@/assets/logoBG.png";
 
 const Navbar = () => {
     return (
-        <nav className="flex justify-center border-b">
-            <div className="py-5 flex justify-between items-center w-[90%] lg:w-[80%] mx-auto">
+        <nav className="flex justify-center border-b bg-yellow-400">
+            <div className="py-5 flex justify-between items-center w-[90%] lg:w-[77%] mx-auto">
                 {/* Logo */}
                 <div>
-                    <img src={logo.src} className="h-[70px] lg:h-[100px]" alt="Logo" />
+                    <img src={logoBG.src} className="h-[70px] lg:h-[120px]" alt="Logo" />
                 </div>
 
                 {/* Desktop Nav Links */}
                 <div className="hidden lg:flex gap-10 items-center">
                     {navlinks.map((link) => (
                         <Link
-                            className="px-2 text-base hover:text-blue-600 transition-colors"
+                            className="px-2 text-xl text-blue-600 font-bold hover:text-blue-600 transition-colors"
                             key={link.name}
                             href={link.href}
                         >
@@ -29,7 +29,7 @@ const Navbar = () => {
                         </Link>
                     ))}
                     <Link href={'#login-href'}>
-                        <Button>Login</Button>
+                        <Button className="text-lg px-10 py-1">Login</Button>
                     </Link>
                 </div>
 

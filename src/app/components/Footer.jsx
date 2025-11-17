@@ -1,19 +1,19 @@
 import React from 'react'
 import Image from 'next/image';
-import logo from "@/assets/logo.png"
+import logoBG from "@/assets/logoBG.png"
 
 const Footer = () => {
     return (
-        <div className='bg-[#F9FAFB] p-2 xl:p-0'>
+        <div className='p-2 xl:p-0 bg-yellow-400'>
             <div className='mx-auto w-[85%] xl:w-[80%]'>
                 <div className='py-20 flex flex-col lg:flex-row justify-between gap-10 xl:gap-5 border-b-gray-400'>
                     <div className='space-y-2 xl:space-y-5'>
-                        <img src={logo.src} className='object-contain h-[120px]' alt="" />
+                        <img src={logoBG.src} className='object-contain h-[170px]' alt="" />
                     </div>
                     <div className='mt-5 xl:mt-0'>
                         
-                        <ul className='space-y-3 xl:space-y-5'>
-                            <h1 className='font-bold text-xl'>Company</h1>
+                        <ul className='space-y-3 xl:space-y-5 text-xl'>
+                            <h1 className='font-bold text-2xl'>Company</h1>
                             <li>Home</li>
                             <li>About Us</li>
                             <li>Blogs</li>
@@ -22,8 +22,8 @@ const Footer = () => {
                     </div>
                     <div>
                         
-                        <ul className='space-y-3 xl:space-y-5'>
-                            <h1 className='font-bold text-xl'>Contact Info</h1>
+                        <ul className='space-y-3 xl:space-y-5 text-xl'>
+                            <h1 className='font-bold text-2xl'>Contact Info</h1>
                             <li>Silk St, Barbican, London EC2Y 8DS, UK</li>
                             <li>info@fitnessguru.com</li>
                             <li>800-123-45-678</li>
@@ -31,8 +31,8 @@ const Footer = () => {
                     </div>
                     <div>
     
-                        <ul className='space-y-3 xl:space-y-5'>
-                            <h1 className='font-bold text-xl'>Follow Us</h1>
+                        <ul className='space-y-3 xl:space-y-5 text-xl'>
+                            <h1 className='font-bold text-2xl'>Follow Us</h1>
                             <li>Instagram</li>
                             <li>Facebook</li>
                             <li>LinkedIn</li>
