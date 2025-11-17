@@ -10,7 +10,7 @@ import logoBG from "@/assets/logoBG.png";
 
 const Navbar = () => {
     return (
-        <nav className="flex justify-center border-b bg-yellow-400">
+        <nav className="flex justify-center border-b bg-[#fcf103]">
             <div className="py-5 flex justify-between items-center w-[90%] lg:w-[77%] mx-auto">
                 {/* Logo */}
                 <div>

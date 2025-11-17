@@ -115,17 +115,38 @@ export const teamData = [
     name: 'Satish Manohar',
     position: 'Founder & CEO',
     image: team1,
-    desc: '“We are transforming temporary staffing in India. At Temploymentz, skilled talent meets business demand — faster, easier, and with trust. We enable companies to grow without hiring delays.”'
+    desc: '“We are transforming temporary staffing in India. At Temploymentz, skilled talent meets business demand — faster, easier, and with trust. We enable companies to grow without hiring delays.”',
+    link: "https://www.linkedin.com/in/sathish-manohar/"
   },
   {
     name: 'Vasu Dev',
     position: 'Cofounder & COO',
     image: team2,
-    desc: '“Temploymentz delivers on-demand, skilled, and reliable manpower to help businesses operate smoothly, adapt to change, and scale efficiently.”'
+    desc: '“Temploymentz delivers on-demand, skilled, and reliable manpower to help businesses operate smoothly, adapt to change, and scale efficiently.”',
+    link: "https://www.linkedin.com/in/vasu-dev-b86671209/"
   }
 ]
 
 export const accordianData = [
+  {
+    title: "Special Categories",
+    desc: "Connect with skilled retail and e-commerce professionals to manage stores, online operations, and customer experiences efficiently.",
+    roles: [
+      "Business Networking Representative",
+      "Home Tutor",
+      "Home Nurses / Care Assistants",
+      "Receptionists / Front Desk Executives",
+      "Admin / Office Assistants & Data Entry",
+      "Telecallers / Customer Support Agents",
+      "Event Assistants & Corporate Coordinators",
+      "Digital Support Executives",
+      "Academic Assistants / Assignment Helpers",
+      "Sales Promoters / Demo Executives",
+      "Corporate Trainers (Short Sessions)",
+      "HR Support Assistants",
+      "Content & Documentation Specialists"
+    ],
+  },
   {
     title: "Retail and E-commerce",
     desc: "Connect with skilled retail and e-commerce professionals to manage stores, online operations, and customer experiences efficiently.",

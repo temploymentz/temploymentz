@@ -5,7 +5,7 @@ import wp from "@/assets/wp.webp";
 const Whatsapp = () => {
     return (
         <a
-            href="https://whatsapp.com/channel/0029VbBVmJrIt5rsOGpXZk3D"
+            href="https://wa.me/919620885201"
             target="_blank"
             rel="noopener noreferrer"
         >
