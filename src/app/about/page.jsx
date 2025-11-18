@@ -10,11 +10,11 @@ import { aboutData } from '@/data'
 const page = () => {
     return (
         <>
-            <div className='w-[85%] md:w-[80%] mx-auto flex flex-col justify-center items-center py-10 md:py-20 gap-10'>
-                <div className='flex flex-col md:flex-row gap-5 md:gap-0 text-center md:text-left justify-between'>
-                    <h1 className={`md:w-2/7 ${style.minHeader.fontSize} ${style.minHeader.lineHeight} ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>About</span> <span className='text-yellow-500'>Us</span> </h1>
-                    <div className='md:w-5/7 space-y-10'>
-                        <h1 className={`${style.minHeader.fontSize} leading-9 md:leading-14 ${style.minHeader.fontWeight}`}>Empowering <span className='text-blue-600'>Businesses</span> & <span className='text-yellow-500'>Professionals</span> in the <br /> New Age of Work </h1>
+            <div className='w-[95%] xl:w-[80%] mx-auto flex flex-col justify-center items-center py-10 md:py-20 gap-10'>
+                <div className='flex flex-col xl:flex-row gap-5 md:gap-0 text-center xl:text-left justify-between items-center'>
+                    <h1 className={`xl:w-2/7 font-bold leading-9 xl:leading-12 ${style.minHeader.fontSize}`}> <span className='text-blue-600'>About</span> <span className='text-yellow-500'>Temploymentz</span> </h1>
+                    <div className='xl:w-4/7 space-y-10'>
+                        <h1 className={`text-xl md:text-2xl xl:text-3xl mt-2 md:mt-5 leading-7 xl:leading-10 ${style.minHeader.fontWeight}`}>Empowering <span className='text-blue-600'>Businesses</span> & <span className='text-yellow-500'>Professionals</span> in the <br /> New Age of Work </h1>
                         <p className={` font-medium xl:text-xl text-[#493f4a] ${style.para.lineHeight}`}>Founded in Bangalore, Temploymentz set out to revolutionize temporary staffing across India. Our mission is to create flexible work opportunities for skilled professionals and reliable staffing solutions for organizations. With thousands of success stories, we’re dedicated to compliance, quality, and convenience. Partner with us to transform your workforce and unlock growth, balance, and innovation</p>
                     </div>
                 </div>

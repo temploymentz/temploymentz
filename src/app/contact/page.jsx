@@ -31,7 +31,7 @@ const page = () => {
                         {/* Left Column - Contact Information */}
                         <div className="space-y-12">
                             <div>
-                                <h1 className="text-5xl font-medium mb-12">
+                                <h1 className="text-5xl mb-12 font-bold">
                                     <span className="text-blue-600">Contact </span>
                                     <span className="text-orange-500">Us</span>
                                 </h1>
@@ -54,7 +54,7 @@ const page = () => {
 
                             {/* Send Us a Message Section */}
                             <div className="space-y-6">
-                                <h2 className="text-3xl font-medium text-blue-600">Send Us a Message</h2>
+                                <h2 className="text-3xl font-bold text-blue-600">Send Us a Message</h2>
                                 <p className="text-gray-700 font-semibold">
                                     Reach out to us for inquiries or support, and we'll respond promptly to assist you
                                 </p>
