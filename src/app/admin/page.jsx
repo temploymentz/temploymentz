@@ -32,18 +32,20 @@ export default function AdminDashboard() {
     try {
       setLoading(true);
 
-      // Fetch blogs
-      const blogsRes = await fetch("/api/blogs");
+      // Fetch all blogs (admin view)
+      const blogsRes = await fetch("/api/blogs?admin=true");
       if (blogsRes.ok) {
         const blogsData = await blogsRes.json();
         setBlogs(blogsData);
+        console.log("✅ Blogs fetched:", blogsData.length);
       }
 
-      // Fetch testimonials
-      const testimonialsRes = await fetch("/api/testimonials");
+      // Fetch all testimonials (admin view)
+      const testimonialsRes = await fetch("/api/testimonials?admin=true");
       if (testimonialsRes.ok) {
         const testimonialsData = await testimonialsRes.json();
         setTestimonials(testimonialsData);
+        console.log("✅ Testimonials fetched:", testimonialsData.length);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -112,6 +114,28 @@ export default function AdminDashboard() {
     } catch (error) {
       console.error("Error updating blog:", error);
       toast.error("Error updating blog");
+    }
+  };
+
+  const handleToggleTestimonialPublish = async (id, published) => {
+    try {
+      const response = await fetch(`/api/testimonials/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ published: !published }),
+      });
+
+      if (response.ok) {
+        setTestimonials(
+          testimonials.map((t) => (t._id === id ? { ...t, published: !published } : t))
+        );
+        toast.success(
+          `Testimonial ${!published ? "published" : "unpublished"} successfully`
+        );
+      }
+    } catch (error) {
+      console.error("Error updating testimonial:", error);
+      toast.error("Error updating testimonial");
     }
   };
 
@@ -295,24 +319,59 @@ export default function AdminDashboard() {
                       key={testimonial._id}
                       className="bg-gray-50 rounded-lg p-4 border border-gray-200"
                     >
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <h3 className="font-semibold text-gray-900">
-                            {testimonial.name}
-                          </h3>
-                          <p className="text-sm text-gray-600">
-                            {testimonial.role}
-                          </p>
-                          <p className="text-sm text-gray-700 mt-2">
-                            {testimonial.feedback.substring(0, 100)}...
-                          </p>
-                          <div className="flex gap-2 mt-2">
-                            <span className="text-xs text-yellow-600">
-                              ⭐ {testimonial.rating}
-                            </span>
+                      <div className="flex justify-between items-start gap-4">
+                        <div className="flex gap-4 flex-1">
+                          {testimonial.image && (
+                            <img 
+                              src={testimonial.image} 
+                              alt={testimonial.name}
+                              className="h-12 w-12 rounded-full object-cover flex-shrink-0"
+                            />
+                          )}
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2">
+                              <h3 className="font-semibold text-gray-900">
+                                {testimonial.name}
+                              </h3>
+                              {testimonial.published ? (
+                                <span className="px-2 py-1 bg-green-100 text-green-800 rounded text-xs font-semibold">
+                                  Published
+                                </span>
+                              ) : (
+                                <span className="px-2 py-1 bg-gray-100 text-gray-800 rounded text-xs font-semibold">
+                                  Draft
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-sm text-gray-600">
+                              {testimonial.role}
+                            </p>
+                            <p className="text-sm text-gray-700 mt-2">
+                              {testimonial.feedback.substring(0, 100)}...
+                            </p>
+                            <div className="flex gap-2 mt-2">
+                              <span className="text-xs text-yellow-600">
+                                ⭐ {testimonial.rating}
+                              </span>
+                            </div>
                           </div>
                         </div>
                         <div className="flex gap-2">
+                          <button
+                            onClick={() =>
+                              handleToggleTestimonialPublish(testimonial._id, testimonial.published)
+                            }
+                            className="text-blue-600 hover:text-blue-900 p-2 rounded hover:bg-blue-50"
+                            title={
+                              testimonial.published ? "Unpublish" : "Publish"
+                            }
+                          >
+                            {testimonial.published ? (
+                              <Eye className="w-4 h-4" />
+                            ) : (
+                              <EyeOff className="w-4 h-4" />
+                            )}
+                          </button>
                           <Link
                             href={`/admin/testimonials/${testimonial._id}`}
                             className="text-orange-600 hover:text-orange-900 p-2 rounded hover:bg-orange-50"

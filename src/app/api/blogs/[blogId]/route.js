@@ -40,7 +40,7 @@ export async function PUT(request, { params }) {
   try {
     await connectDB();
 
-    const { blogId } = params;
+    const { blogId } = await params;
     const data = await request.json();
 
     if (!mongoose.Types.ObjectId.isValid(blogId)) {
@@ -80,7 +80,7 @@ export async function DELETE(request, { params }) {
   try {
     await connectDB();
 
-    const { blogId } = params;
+    const { blogId } = await params;
 
     if (!mongoose.Types.ObjectId.isValid(blogId)) {
       return Response.json(

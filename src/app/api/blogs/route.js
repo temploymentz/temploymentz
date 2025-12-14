@@ -6,7 +6,15 @@ export async function GET(request) {
   try {
     await connectDB();
 
-    const blogs = await Blog.find().sort({ createdAt: -1 });
+    const { searchParams } = new URL(request.url);
+    const admin = searchParams.get("admin") === "true";
+
+    let query = {};
+    if (!admin) {
+      query.published = true;
+    }
+
+    const blogs = await Blog.find(query).sort({ createdAt: -1 });
 
     return Response.json(blogs, { status: 200 });
   } catch (error) {
@@ -31,14 +39,35 @@ export async function POST(request) {
       );
     }
 
+    // Parse sections if it's a JSON string
+    let sections = [];
+    if (typeof data.sections === "string") {
+      try {
+        sections = JSON.parse(data.sections);
+      } catch (e) {
+        sections = [];
+      }
+    } else {
+      sections = data.sections || [];
+    }
+
+    // Parse keyPoints if it's a string array
+    const keyPoints = typeof data.keyPoints === "string" 
+      ? data.keyPoints.split(",").map(p => p.trim())
+      : data.keyPoints || [];
+
     const newBlog = await Blog.create({
       image: data.image,
       heading: data.heading,
       intro: data.intro,
-      points: data.points || [],
-      content: data.content || [],
+      keyPoints: keyPoints,
+      sections: sections,
+      conclusion: data.conclusion || "",
       author: data.author || "Admin",
       published: data.published || false,
+      // Legacy fields
+      points: keyPoints,
+      content: sections,
     });
 
     console.log("✅ Blog created:", newBlog._id);

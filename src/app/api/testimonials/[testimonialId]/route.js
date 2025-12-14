@@ -7,7 +7,7 @@ export async function GET(request, { params }) {
   try {
     await connectDB();
 
-    const { testimonialId } = params;
+    const { testimonialId } = await params;
 
     if (!mongoose.Types.ObjectId.isValid(testimonialId)) {
       return Response.json(
@@ -40,7 +40,7 @@ export async function PUT(request, { params }) {
   try {
     await connectDB();
 
-    const { testimonialId } = params;
+    const { testimonialId } = await params;
     const data = await request.json();
 
     if (!mongoose.Types.ObjectId.isValid(testimonialId)) {
@@ -80,7 +80,7 @@ export async function DELETE(request, { params }) {
   try {
     await connectDB();
 
-    const { testimonialId } = params;
+    const { testimonialId } = await params;
 
     if (!mongoose.Types.ObjectId.isValid(testimonialId)) {
       return Response.json(

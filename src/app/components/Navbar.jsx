@@ -57,6 +57,13 @@ const Navbar = () => {
                                 </Button>
                             ) : session ? (
                                 <div className="flex items-center gap-3">
+                                    {session.user?.isAdmin && (
+                                        <Link href="/admin">
+                                            <Button className="text-sm 2xl:text-base px-5 py-1 2xl:px-10 2xl:py-2 bg-orange-600 hover:bg-orange-700">
+                                                Admin Panel
+                                            </Button>
+                                        </Link>
+                                    )}
                                     <div className="flex items-center gap-2 bg-white rounded-lg px-4 py-2 border border-gray-300">
                                         <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
                                             {session.user?.firstName?.[0] || session.user?.name?.[0] || 'U'}
@@ -111,6 +118,13 @@ const Navbar = () => {
                                             </Button>
                                         ) : session ? (
                                             <div className="flex flex-col gap-3 mt-4">
+                                                {session.user?.isAdmin && (
+                                                    <Link href="/admin" className="w-full">
+                                                        <Button className="w-full bg-orange-600 hover:bg-orange-700">
+                                                            Admin Panel
+                                                        </Button>
+                                                    </Link>
+                                                )}
                                                 <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-gray-300">
                                                     <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-bold">
                                                         {session.user?.firstName?.[0] || session.user?.name?.[0] || 'U'}

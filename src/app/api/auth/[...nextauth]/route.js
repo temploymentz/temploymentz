@@ -52,6 +52,7 @@ export const authOptions = {
                         name: `${user.firstName} ${user.lastName}`,
                         firstName: user.firstName,
                         lastName: user.lastName,
+                        isAdmin: user.isAdmin || false,
                     };
                 } catch (error) {
                     throw new Error(error.message);
@@ -74,14 +75,30 @@ export const authOptions = {
                 session.user.id = token.sub;
                 session.user.firstName = token.firstName;
                 session.user.lastName = token.lastName;
+                session.user.isAdmin = token.isAdmin || false;
             }
             return session;
         },
-        async jwt({ token, user }) {
+        async jwt({ token, user, account }) {
             if (user) {
                 token.firstName = user.firstName;
                 token.lastName = user.lastName;
+                token.isAdmin = user.isAdmin || false;
             }
+            
+            // For Google OAuth: fetch user data to check isAdmin status
+            if (account?.provider === "google" && !token.isAdmin) {
+                try {
+                    await connectDB();
+                    const dbUser = await User.findOne({ email: token.email });
+                    if (dbUser) {
+                        token.isAdmin = dbUser.isAdmin || false;
+                    }
+                } catch (error) {
+                    console.error("Error fetching user from DB:", error);
+                }
+            }
+            
             return token;
         },
         async redirect({ url, baseUrl }) {
