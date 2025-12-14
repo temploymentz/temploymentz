@@ -2,14 +2,58 @@
 
 import { blogData } from "@/data";
 import { useParams, useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const BlogPage = () => {
     const { blogId } = useParams();
     const router = useRouter();
-    const blog = blogData[blogId-1];
+    const [blog, setBlog] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-    if (!blog) return <div className="p-10 text-xl">Blog not found</div>;
+    useEffect(() => {
+        const fetchBlog = async () => {
+            try {
+                // First try to fetch from API using blogId (MongoDB ID)
+                const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+                const response = await fetch(`${baseUrl}/api/blogs/${blogId}`);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    setBlog(data);
+                    console.log('✅ Blog fetched from API:', data.heading);
+                } else {
+                    // Fallback: try to get from static data using index
+                    const staticBlog = blogData[parseInt(blogId) - 1];
+                    if (staticBlog) {
+                        setBlog(staticBlog);
+                        console.log('⚠️ Blog fetched from static data');
+                    } else {
+                        setError('Blog not found');
+                    }
+                }
+            } catch (err) {
+                console.error('Error fetching blog:', err);
+                // Fallback to static data
+                const staticBlog = blogData[parseInt(blogId) - 1];
+                if (staticBlog) {
+                    setBlog(staticBlog);
+                    console.log('⚠️ Blog fetched from static data (error fallback)');
+                } else {
+                    setError('Failed to load blog');
+                }
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (blogId) {
+            fetchBlog();
+        }
+    }, [blogId]);
+
+    if (loading) return <div className="p-10 text-xl text-center">Loading blog...</div>;
+    if (error || !blog) return <div className="p-10 text-xl text-center text-red-600">{error || 'Blog not found'}</div>;
 
     return (
         <div className="w-full flex justify-center mt-10 px-4">

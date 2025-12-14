@@ -4,8 +4,15 @@ import { style } from '@/styles'
 import { signIn } from "next-auth/react";
 import Button from './Button';
 import google from "@/assets/google.png"
+import { useRouter } from 'next/navigation';
 
 const Connections = ({ data, index }) => {
+    const router = useRouter();
+    const navigateToLogin = () => {
+        if (index === 0) {
+            signIn("google", { callbackUrl: "/form" });
+        }
+    }
     return (
         <div style={{ backgroundColor: style.lightBG.backgroundColor }} className='text-left p-5 space-y-5 rounded-xl'>
             <div className='flex flex-col justify-between h-full gap-5 items-start pb-4'>
@@ -16,12 +23,12 @@ const Connections = ({ data, index }) => {
                 </div>
                 {
                     index === 0 ?
-                        <Button onClick={() => signIn("google")} className='text-blue-600 font-bold xl:text-xl xl:px-10'>Employer LogIn
+                        <Button onClick={navigateToLogin} className='text-blue-600 font-bold xl:text-xl xl:px-10'>Employer LogIn
                             {/* <img src={google.src} className='ml-2 object-contain w-7 h-7 bg-white rounded-full' alt="" /> */}
                         </Button>
                         :
                         index === 1 ?
-                            <Button className='text-blue-600 font-bold xl:text-xl xl:px-10'>Candidate LogIn</Button>
+                            <Button onClick={()=>{router.push("/login")}} className='text-blue-600 font-bold xl:text-xl xl:px-10'>Candidate LogIn</Button>
                             :
                             <Button className='xl:text-xl xl:px-10'>Explore</Button>
                 }

@@ -1,8 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
-import TeamComponent from '../components/TeamComponent';
-import HireSmarter from '../components/HireSmarter';
 
 const page = () => {
     const [formData, setFormData] = useState({

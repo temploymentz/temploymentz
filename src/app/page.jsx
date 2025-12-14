@@ -10,6 +10,7 @@ import HireSmarter from './components/HireSmarter'
 import { accordianData, connections, testimonialsData, whyChooseUsData1, whyChooseUsData2 } from '@/data'
 import AccordNew from './components/AccordNew'
 import Link from 'next/link'
+import TestimonialsSection from './components/TestimonialsSection'
 
 
 export default function Page() {
@@ -102,16 +103,7 @@ export default function Page() {
       </div>
 
       {/* Testimonials */}
-      <div className='w-[85%] md:w-[80%] mx-auto flex flex-col justify-center min-h-[80vh] py-15'>
-        <div className='space-y-10'>
-          <h1 className={`${style.minHeader.fontSize} text-center md:text-left leading-10 md:leading-14 ${style.minHeader.fontWeight}`}> <span className='text-blue-600'>Experiences Shared by</span> <span className='text-yellow-500'>Our Clients</span></h1>
-        </div>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-10 xl:grid-cols-3 justify-between w-full py-10'>
-          {
-            testimonialsData.map(ele => <Testimonials key={ele.name} data={ele} />)
-          }
-        </div>
-      </div>
+      <TestimonialsSection />
 
       {/* Elevate Your Page */}
       <HireSmarter />

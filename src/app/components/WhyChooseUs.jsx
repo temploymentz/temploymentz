@@ -2,7 +2,7 @@ import { BanIcon, CircleCheck } from 'lucide-react'
 import React from 'react'
 
 const WhyChooseUs = ({ data }) => {
-    console.log(data);
+
     return (
         <div className='space-y-5 border rounded-xl p-5 bg-white'>
             <CircleCheck color='#F7A40F' className='h-8 w-8' />
