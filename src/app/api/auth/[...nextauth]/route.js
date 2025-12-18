@@ -10,6 +10,7 @@ export const authOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            allowDangerousEmailAccountLinking: true,
         }),
         CredentialsProvider({
             name: "Credentials",
@@ -70,6 +71,38 @@ export const authOptions = {
         updateAge: 60 * 60, // Update session every 1 hour
     },
     callbacks: {
+        async signIn({ user, account, profile }) {
+            if (account?.provider === "google") {
+                try {
+                    await connectDB();
+                    
+                    let dbUser = await User.findOne({ email: user.email });
+                    
+                    if (!dbUser) {
+                        // Create new user from Google profile
+                        const nameParts = user.name?.split(" ") || ["User"];
+                        const firstName = profile.given_name || nameParts[0] || "User";
+                        const lastName = profile.family_name || nameParts.slice(1).join(" ") || "";
+                        
+                        dbUser = new User({
+                            email: user.email,
+                            firstName: firstName || "User",
+                            lastName: lastName || "User",
+                            isVerified: true, // Google users are pre-verified
+                            password: "oauth-google", // Placeholder for OAuth users
+                            isAdmin: false,
+                        });
+                        await dbUser.save();
+                    }
+                    
+                    return true;
+                } catch (error) {
+                    console.error("Error in signIn callback:", error);
+                    return false;
+                }
+            }
+            return true;
+        },
         async session({ session, token }) {
             if (session.user) {
                 session.user.id = token.sub;
@@ -92,6 +125,8 @@ export const authOptions = {
                     await connectDB();
                     const dbUser = await User.findOne({ email: token.email });
                     if (dbUser) {
+                        token.firstName = dbUser.firstName;
+                        token.lastName = dbUser.lastName;
                         token.isAdmin = dbUser.isAdmin || false;
                     }
                 } catch (error) {
