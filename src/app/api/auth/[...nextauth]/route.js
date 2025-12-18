@@ -11,6 +11,11 @@ export const authOptions = {
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             allowDangerousEmailAccountLinking: true,
+            authorization: {
+                params: {
+                    prompt: "consent",
+                },
+            },
         }),
         CredentialsProvider({
             name: "Credentials",
@@ -76,28 +81,35 @@ export const authOptions = {
                 try {
                     await connectDB();
                     
-                    let dbUser = await User.findOne({ email: user.email });
+                    const email = user.email?.toLowerCase();
+                    if (!email) {
+                        console.error("No email from Google profile");
+                        return false;
+                    }
+                    
+                    let dbUser = await User.findOne({ email });
                     
                     if (!dbUser) {
-                        // Create new user from Google profile
-                        const nameParts = user.name?.split(" ") || ["User"];
-                        const firstName = profile.given_name || nameParts[0] || "User";
-                        const lastName = profile.family_name || nameParts.slice(1).join(" ") || "";
+                        const firstName = profile?.given_name || user.name?.split(" ")[0] || "User";
+                        const lastName = profile?.family_name || user.name?.split(" ").slice(1).join(" ") || "";
                         
-                        dbUser = new User({
-                            email: user.email,
-                            firstName: firstName || "User",
-                            lastName: lastName || "User",
-                            isVerified: true, // Google users are pre-verified
-                            password: "oauth-google", // Placeholder for OAuth users
+                        dbUser = await User.create({
+                            email,
+                            firstName,
+                            lastName,
+                            isVerified: true,
+                            password: "oauth-google-" + Date.now(),
                             isAdmin: false,
                         });
-                        await dbUser.save();
+                        console.log("✓ Google user created:", email);
+                    } else {
+                        console.log("✓ Google user exists:", email);
                     }
                     
                     return true;
-                } catch (error) {
-                    console.error("Error in signIn callback:", error);
+                } catch (err) {
+                    console.error("❌ SignIn callback error:", err.message);
+                    console.error("Stack:", err.stack);
                     return false;
                 }
             }
