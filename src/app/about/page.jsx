@@ -14,7 +14,18 @@ const page = () => {
                 <div className='flex flex-col xl:flex-row gap-5 md:gap-0 text-center xl:text-left justify-between items-center'>
                     <h1 className={`xl:w-2/7 font-bold leading-9 xl:leading-12 ${style.minHeader.fontSize}`}> <span className='text-blue-600'>About</span> <span className='text-yellow-500'>Temploymentz</span> </h1>
                     <div className='xl:w-4/7 space-y-10'>
-                        <h1 className={`text-xl md:text-2xl xl:text-3xl mt-2 md:mt-5 leading-7 xl:leading-10 ${style.minHeader.fontWeight}`}>Empowering <span className='text-blue-600'>Businesses</span> & <span className='text-yellow-500'>Professionals</span> in the <br /> New Age of Work </h1>
+                        <h1 className="
+                                text-xl md:text-2xl xl:text-3xl 
+                                mt-2 md:mt-5 
+                                leading-7 xl:leading-10 
+                                text-balance 
+                                mx-auto
+                                font-medium
+                                ">
+                            Empowering <span className="text-blue-600">Businesses</span> &
+                            <span className="text-yellow-500"> Professionals</span> in the
+                            New Age of Work
+                        </h1>
                         <p className={` font-medium xl:text-xl text-[#493f4a] ${style.para.lineHeight}`}>Founded in Bangalore, Temploymentz set out to revolutionize temporary staffing across India. Our mission is to create flexible work opportunities for skilled professionals and reliable staffing solutions for organizations. With thousands of success stories, we’re dedicated to compliance, quality, and convenience. Partner with us to transform your workforce and unlock growth, balance, and innovation</p>
                     </div>
                 </div>
